@@ -1,6 +1,5 @@
 ﻿using System.Net;
 using System.Net.Http.Json;
-using System.Web;
 using ASiNet.API.TelegramBot.Base;
 using ASiNet.API.TelegramBot.Enums;
 using ASiNet.API.TelegramBot.Primitives;
@@ -42,7 +41,7 @@ public class TelegramBotClient : IDisposable
         throw new Exception($"{(HttpStatusCode?)result.ErrorCode}: {result.Description}");
     }
 
-    public async IAsyncEnumerable<User> GetUpdates(UpdateType allowUpdates = UpdateType.Message | UpdateType.EditedChannelPost | UpdateType.CallbackQuery)
+    public async IAsyncEnumerable<Update> GetUpdates(UpdateType allowUpdates = UpdateType.Message | UpdateType.EditedChannelPost | UpdateType.CallbackQuery)
     {
         var msg = await _client.GetAsync(QueryHelpers.AddQueryString("getUpdates", 
             [
