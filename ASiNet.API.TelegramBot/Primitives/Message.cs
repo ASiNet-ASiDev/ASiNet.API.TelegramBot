@@ -100,4 +100,33 @@ public class Message
     public Dice? Dice { get; set; }
 
     public Game? Game { get; set; }
+
+    public Poll? Poll { get; set; }
+
+    public Venue? Venue { get; set; }
+
+    public Location? Location { get; set; }
+
+    public User[]? NewChatMember {  get; set; }
+
+    public string? NewChatTitle { get; set; }
+
+    public PhotoSize[]? NewChatPhoto { get; set; }
+
+    public bool? DeleteChatPhoto { get; set; }
+
+    public bool? GroupChatCreated { get; set; }
+
+    public bool? SupergroupChatCreated { get; set; }
+
+    public bool? ChannelChatCreated { get; set; }
+
+    public MessageAutoDeletedTimeChanget? MessageAutoDeletedTimeChanget { get; set; }
+
+    public long? MigrateFromChatId { get; set; }
+
+    public Message? PinnedMessage { get; set; }
+
+    public Invoice? Invoice { get; set; }
+    //TODO
 }
