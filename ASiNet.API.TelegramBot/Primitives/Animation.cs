@@ -1,20 +1,21 @@
 ﻿using System.Text.Json.Serialization;
-using ASiNet.API.TelegramBot.Primitives.Base;
 
 namespace ASiNet.API.TelegramBot.Primitives;
-/// <summary>
-/// This object represents one size of a photo or a file / sticker thumbnail.
-/// </summary>
-public class PhotoSize : TelegramFileId
+public class Animation : Document
 {
     /// <summary>
-    /// Photo width
+    /// Video width as defined by sender
     /// </summary>
     [JsonPropertyName("width")]
     public int Width { get; set; }
     /// <summary>
-    /// Photo height
+    /// Video height as defined by sender
     /// </summary>
     [JsonPropertyName("height")]
     public int Height { get; set; }
+    /// <summary>
+    /// Duration of the video in seconds as defined by sender
+    /// </summary>
+    [JsonPropertyName("duration")]
+    public int Duration { get; set; }
 }
